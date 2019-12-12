@@ -1,0 +1,5 @@
+def plat(x):
+    if "windows" in x:
+        return 1
+    else :
+        return 0
