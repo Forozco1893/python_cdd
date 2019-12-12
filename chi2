@@ -1,0 +1,5 @@
+chi2 = pd.DataFrame(columns=["p-value", "¿Son iguales?", "sets"])
+for x in disc:
+    chi2.loc[x, "p-value"] = chisquare(f_obs=datos_test[x].value_counts(True).sort_index().values, f_exp=datos_train[x].value_counts(True).sort_index().values).pvalue
+    chi2["¿Son iguales?"] = chi2["p-value"].map(lambda x: "Si" if 1-x<0.05 else "No")
+    chi2["sets"] = "train/test"
