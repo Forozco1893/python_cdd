@@ -3,3 +3,10 @@ def plat(x):
         return 1
     else :
         return 0
+
+datos_train["windows"] = datos_train["platforms"].apply(plat)
+datos_train["linux"] = datos_train["platforms"].apply(plat1)
+datos_train["mac"] = datos_train["platforms"].apply(plat2)
+datos_test["windows"] = datos_test["platforms"].apply(plat)
+datos_test["linux"] = datos_test["platforms"].apply(plat1)
+datos_test["mac"] = datos_test["platforms"].apply(plat2)
